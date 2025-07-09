@@ -31,7 +31,7 @@
 # pool.shutdown  # => termina a execução de todas as Threads
 
 class PriorityQueue
-  PRIORITIES = %i(high medium low)
+  PRIORITIES = %i(high default low)
 
   def initialize
     @internal_queues = {}
@@ -47,8 +47,8 @@ class PriorityQueue
     @mutex.synchronize do
       task = if !@internal_queues[:high].empty?
         @internal_queues[:high].pop
-      elsif !@internal_queues[:medium].empty?
-        @internal_queues[:medium].pop
+      elsif !@internal_queues[:default].empty?
+        @internal_queues[:default].pop
       elsif !@internal_queues[:low].empty?
         @internal_queues[:low].pop
       end
@@ -59,13 +59,62 @@ class PriorityQueue
   end
 end
 
-priority_queue = PriorityQueue.new
+# priority_queue = PriorityQueue.new
 
-priority_queue.add(:medium) { puts 'Normal task' }
-priority_queue.add(:high) { puts 'This should run first' }
-priority_queue.add(:low)  { puts 'This should run last' }
+# priority_queue.add(:default) { puts 'Normal task' }
+# priority_queue.add(:high) { puts 'This should run first' }
+# priority_queue.add(:low)  { puts 'This should run last' }
 
-priority_queue.next_task # This should run first
-priority_queue.next_task # Normal task
-priority_queue.next_task # This should run last
-priority_queue.next_task # No task to run
+# priority_queue.next_task # This should run first
+# priority_queue.next_task # Normal task
+# priority_queue.next_task # This should run last
+# priority_queue.next_task # No task to run
+
+class DynamicThreadPool
+  MIN_THREADS = 2
+
+  def initialize(max_threads:)
+    @max_threads = max_threads
+    @used_threads = []
+    @queue = PriorityQueue.new
+
+    MIN_THREADS.times { start_thread }
+  end
+
+  def schedule(priority = :default, &block)
+    @queue.add(priority, &block)
+    puts @used_threads
+    start_thread if @used_threads.count <= @max_threads
+  end
+
+  def shutdown
+    @used_threads.each(&:kill)
+    @used_threads.each(&:join)
+  end
+
+  private
+
+  def start_thread
+    thread = Thread.new do
+      while true
+        task = @queue.next_task
+
+        if task && task != 'No task to run'
+          task.call
+        else
+          sleep 0.5
+        end
+      end
+    end
+
+    @used_threads << thread
+  end
+end
+
+pool = DynamicThreadPool.new(max_threads: 10) 
+10.times do |i| 
+  pool.schedule(:default) { sleep 1; puts "Tarefa padrão #{i} concluída" } 
+end 
+5.times do |i| 
+  pool.schedule(:high) { sleep 0.5; puts "Tarefa prioritária #{i} concluída" } 
+end

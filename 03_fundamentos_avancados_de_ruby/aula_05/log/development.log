@@ -1,0 +1,716 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (5.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-11 01:42:24.525467', '2025-07-11 01:42:24.525470') RETURNING "key" /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+Migrating to CreateTasks (20250711014217)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "status" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250711014217') RETURNING "version" /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-07-11 01:47:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+Processing by TasksController#index as */*
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 10.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/models/task.rb:2:in `<class:Task>'
+app/models/task.rb:1:in `<main>'
+app/controllers/tasks_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2025-07-11 01:47:26 +0000
+Processing by TasksController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/models/task.rb:2:in `<class:Task>'
+app/models/task.rb:1:in `<main>'
+app/controllers/tasks_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2025-07-11 01:47:45 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-11 01:47:47 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-11 01:47:49 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-11 01:49:24 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-11 01:51:17 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 01:51:51 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/tasks" for ::1 at 2025-07-11 01:52:30 +0000
+  
+RuntimeError (Undeclared attribute type for enum 'stauts' in Task. Enums must be backed by a database column or declared with an explicit type via `attribute`.):
+  
+activerecord (8.0.2) lib/active_record/enum.rb:242:in `block in _enum'
+activemodel (8.0.2) lib/active_model/attribute_registration.rb:71:in `block in apply_to'
+activemodel (8.0.2) lib/active_model/attribute_registration.rb:69:in `each'
+activemodel (8.0.2) lib/active_model/attribute_registration.rb:69:in `apply_to'
+activemodel (8.0.2) lib/active_model/attribute_registration.rb:87:in `block in apply_pending_attribute_modifications'
+activemodel (8.0.2) lib/active_model/attribute_registration.rb:86:in `each'
+activemodel (8.0.2) lib/active_model/attribute_registration.rb:86:in `apply_pending_attribute_modifications'
+activerecord (8.0.2) lib/active_record/attributes.rb:250:in `_default_attributes'
+activerecord (8.0.2) lib/active_record/model_schema.rb:596:in `load_schema!'
+activerecord (8.0.2) lib/active_record/counter_cache.rb:187:in `load_schema!'
+activerecord (8.0.2) lib/active_record/encryption/encryptable_record.rb:127:in `load_schema!'
+activerecord (8.0.2) lib/active_record/model_schema.rb:539:in `block in load_schema'
+activerecord (8.0.2) lib/active_record/model_schema.rb:536:in `synchronize'
+activerecord (8.0.2) lib/active_record/model_schema.rb:536:in `load_schema'
+activerecord (8.0.2) lib/active_record/model_schema.rb:428:in `columns_hash'
+activerecord (8.0.2) lib/active_record/attributes.rb:244:in `block in _default_attributes'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:418:in `with_connection'
+activerecord (8.0.2) lib/active_record/connection_handling.rb:310:in `with_connection'
+activerecord (8.0.2) lib/active_record/attributes.rb:243:in `_default_attributes'
+activemodel (8.0.2) lib/active_model/attribute_registration.rb:38:in `attribute_types'
+activerecord (8.0.2) lib/active_record/attribute_methods.rb:238:in `attribute_names'
+actionpack (8.0.2) lib/action_controller/metal/params_wrapper.rb:118:in `block in include'
+actionpack (8.0.2) lib/action_controller/metal/params_wrapper.rb:112:in `synchronize'
+actionpack (8.0.2) lib/action_controller/metal/params_wrapper.rb:112:in `include'
+actionpack (8.0.2) lib/action_controller/metal/params_wrapper.rb:278:in `_extract_parameters'
+actionpack (8.0.2) lib/action_controller/metal/params_wrapper.rb:274:in `_wrap_parameters'
+actionpack (8.0.2) lib/action_controller/metal/params_wrapper.rb:300:in `_perform_parameter_wrapping'
+actionpack (8.0.2) lib/action_controller/metal/params_wrapper.rb:258:in `process_action'
+activerecord (8.0.2) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (8.0.2) lib/abstract_controller/base.rb:163:in `process'
+actionpack (8.0.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.0.2) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started POST "/tasks" for ::1 at 2025-07-11 01:52:51 +0000
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Task 1", "description"=>"Descrição da task", "status"=>"ongoing", "task"=>{"description"=>"Descrição da task", "status"=>"ongoing"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.6ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `task_params' for an instance of TasksController):
+  
+app/controllers/tasks_controller.rb:8:in `create'
+Started POST "/tasks" for ::1 at 2025-07-11 01:53:52 +0000
+Processing by TasksController#create as */*
+  Parameters: {"task"=>{"name"=>"Task 1", "description"=>"Descrição da task", "status"=>"ongoing"}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'name' for Task.)
+Caused by: NoMethodError (undefined method `name=' for an instance of Task)
+
+Information for: ActiveModel::UnknownAttributeError (unknown attribute 'name' for Task.):
+  
+app/controllers/tasks_controller.rb:8:in `create'
+
+Information for cause: NoMethodError (undefined method `name=' for an instance of Task):
+  
+app/controllers/tasks_controller.rb:8:in `create'
+Started POST "/tasks" for ::1 at 2025-07-11 01:54:14 +0000
+Processing by TasksController#create as */*
+  Parameters: {"task"=>{"name"=>"Task 1", "description"=>"Descrição da task", "status"=>"ongoing"}}
+[31mUnpermitted parameter: :name. Context: { controller: TasksController, action: create, request: #<ActionDispatch::Request:0x00007067836360e0>, params: {"task"=>{"name"=>"Task 1", "description"=>"Descrição da task", "status"=>"ongoing"}, "controller"=>"tasks", "action"=>"create"} }[0m
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 2.4ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/tasks" for ::1 at 2025-07-11 01:54:27 +0000
+Processing by TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"Task 1", "description"=>"Descrição da task", "status"=>"ongoing"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:9:in `create'
+  [1m[36mTask Create (1.8ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "created_at", "updated_at") VALUES ('Task 1', 'Descrição da task', 0, '2025-07-11 01:54:27.180253', '2025-07-11 01:54:27.180253') RETURNING "id" /*action='create',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:9:in `create'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 8.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 01:54:31 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 01:56:13 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2025-07-11 01:57:17 +0000
+Processing by TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"Task 1", "description"=>"Descrição da task", "status"=>"ongoing"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:9:in `create'
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "created_at", "updated_at") VALUES ('Task 1', 'Descrição da task', 0, '2025-07-11 01:57:17.519556', '2025-07-11 01:57:17.519556') RETURNING "id" /*action='create',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:9:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 01:57:19 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/tasks/1" for 127.0.0.1 at 2025-07-11 01:59:25 +0000
+Processing by TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"Task 1", "description"=>"Alterando descrição", "status"=>"ongoing"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='update',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+  [1m[36mTask Update (4.8ms)[0m  [1m[33mUPDATE "tasks" SET "description" = 'Alterando descrição', "updated_at" = '2025-07-11 01:59:25.549334' WHERE "tasks"."id" = 1 /*action='update',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 9.8ms (2 queries, 0 cached) | GC: 3.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 01:59:29 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/tasks/1" for 127.0.0.1 at 2025-07-11 01:59:36 +0000
+Processing by TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"Task 1", "description"=>"Alterando descrição", "status"=>"a"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='update',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ArgumentError ('a' is not a valid status):
+  
+app/controllers/tasks_controller.rb:18:in `update'
+Started GET "/tasks/1" for 127.0.0.1 at 2025-07-11 02:04:42 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/tasks/1"):
+  
+Started GET "/tasks/1" for 127.0.0.1 at 2025-07-11 02:04:51 +0000
+Processing by TasksController#show as */*
+  Parameters: {"id"=>"1", "task"=>{}}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='show',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 02:04:56 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 02:05:45 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/tasks/1" for 127.0.0.1 at 2025-07-11 02:05:57 +0000
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"1", "task"=>{}}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='update',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:22:in `update'
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty or invalid: task):
+  
+app/controllers/tasks_controller.rb:42:in `task_params'
+app/controllers/tasks_controller.rb:23:in `update'
+Started PATCH "/tasks/1" for 127.0.0.1 at 2025-07-11 02:06:08 +0000
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"1", "task"=>{}}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='update',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:22:in `update'
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty or invalid: task):
+  
+app/controllers/tasks_controller.rb:42:in `task_params'
+app/controllers/tasks_controller.rb:23:in `update'
+Started DELETE "/tasks/1" for 127.0.0.1 at 2025-07-11 02:06:19 +0000
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"1", "task"=>{}}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='destroy',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:32:in `destroy'
+  [1m[36mTask Update (8.7ms)[0m  [1m[33mUPDATE "tasks" SET "status" = 3, "updated_at" = '2025-07-11 02:06:19.843440' WHERE "tasks"."id" = 1 /*action='destroy',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:32:in `destroy'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 15.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 02:06:24 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+Migrating to AddDueDateToTasks (20250711020643)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "tasks" ADD "due_date" date /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250711020643') RETURNING "version" /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+Migrating to AddDueDateToTasks (20250711020643)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Aula05'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Aula05'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Aula05'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Aula05'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "status" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "due_date" date) /*application='Aula05'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "atasks" ("id","title","description","status","created_at","updated_at","due_date")
+                     SELECT "id","title","description","status","created_at","updated_at","due_date" FROM "tasks" /*application='Aula05'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "tasks" /*application='Aula05'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "status" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Aula05'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("id","title","description","status","created_at","updated_at")
+                     SELECT "id","title","description","status","created_at","updated_at" FROM "atasks" /*application='Aula05'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atasks" /*application='Aula05'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Aula05'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250711020643' /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+Migrating to AddDueDateToTasks (20250711020643)
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+Migrating to AddDueDateToTasks (20250711020643)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "tasks" ADD "due_date" date /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250711020643') RETURNING "version" /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mTask Load (4.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mTask Update (0.6ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = '2025-07-11 02:09:24.655090', "due_date" = '2025-07-04' WHERE "tasks"."id" = 2 /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mTask Update (0.3ms)[0m  [1m[33mUPDATE "tasks" SET "status" = 3, "updated_at" = '2025-07-11 02:09:27.494729' WHERE "tasks"."id" = 2 /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mTask Update (0.6ms)[0m  [1m[33mUPDATE "tasks" SET "status" = 0, "updated_at" = '2025-07-11 02:12:34.411722' WHERE "tasks"."id" = 2 /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05'*/[0m
+[ActiveJob] [CancelOverdueTasks] [43ff3f48-165b-4e50-be95-1d05907a5395] Performing CancelOverdueTasks (Job ID: 43ff3f48-165b-4e50-be95-1d05907a5395) from Async(default)
+[ActiveJob] [CancelOverdueTasks] [43ff3f48-165b-4e50-be95-1d05907a5395] ↳ (aula05):19:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [43ff3f48-165b-4e50-be95-1d05907a5395] Error performing CancelOverdueTasks (Job ID: 43ff3f48-165b-4e50-be95-1d05907a5395) from Async(default) in 1.03ms: NameError (uninitialized constant CancelOverdueTasks::Tasks):
+/workspaces/aula_05/app/jobs/cancel_overdue_tasks.rb:3:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:68:in `block in _perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:120:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/i18n-1.14.7/lib/i18n.rb:348:in `with_locale'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `instance_exec'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `instance_exec'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:140:in `run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:67:in `_perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:51:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:39:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in `block in perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in `block in tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:38:in `tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in `tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/broadcast_logger.rb:241:in `method_missing'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:39:in `tag_logger'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:23:in `perform_now'
+(aula05):19:in `<main>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/workspace.rb:101:in `eval'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/workspace.rb:101:in `evaluate'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/context.rb:591:in `evaluate_expression'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/context.rb:557:in `evaluate'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:201:in `block (2 levels) in eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:512:in `signal_status'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:193:in `block in eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:272:in `block in each_top_level_statement'
+<internal:kernel>:187:in `loop'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:269:in `each_top_level_statement'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:192:in `eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:173:in `block in run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:172:in `catch'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:172:in `run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/irb_console.rb:112:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:59:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:8:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:87:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor/command.rb:28:in `run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor/invocation.rb:127:in `invoke_command'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command/base.rb:178:in `invoke_command'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor.rb:538:in `dispatch'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command/base.rb:73:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:65:in `block in invoke'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:143:in `with_argv'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:63:in `invoke'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands.rb:18:in `<main>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/3.3.0/bundled_gems.rb:75:in `require'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/3.3.0/bundled_gems.rb:75:in `block (2 levels) in replace_require'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+bin/rails:4:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [43ff3f48-165b-4e50-be95-1d05907a5395] ↳ (aula05):19:in `<main>'
+  [1m[36mTask Load (2.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /* loading for pp */ LIMIT 11 /*application='Aula05'*/[0m
+[ActiveJob] [CancelOverdueTasks] [e821d0fd-64b3-45c5-a799-e542cfe6385b] Performing CancelOverdueTasks (Job ID: e821d0fd-64b3-45c5-a799-e542cfe6385b) from Async(default)
+[ActiveJob] [CancelOverdueTasks] [e821d0fd-64b3-45c5-a799-e542cfe6385b] ↳ (aula05):2:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [e821d0fd-64b3-45c5-a799-e542cfe6385b] Error performing CancelOverdueTasks (Job ID: e821d0fd-64b3-45c5-a799-e542cfe6385b) from Async(default) in 0.59ms: NameError (uninitialized constant CancelOverdueTasks::Tasks):
+/workspaces/aula_05/app/jobs/cancel_overdue_tasks.rb:3:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:68:in `block in _perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:120:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/i18n-1.14.7/lib/i18n.rb:348:in `with_locale'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `instance_exec'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `instance_exec'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:140:in `run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:67:in `_perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:51:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:39:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in `block in perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in `block in tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:38:in `tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in `tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/broadcast_logger.rb:241:in `method_missing'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:39:in `tag_logger'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:23:in `perform_now'
+(aula05):2:in `<main>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/workspace.rb:101:in `eval'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/workspace.rb:101:in `evaluate'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/context.rb:591:in `evaluate_expression'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/context.rb:557:in `evaluate'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:201:in `block (2 levels) in eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:512:in `signal_status'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:193:in `block in eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:272:in `block in each_top_level_statement'
+<internal:kernel>:187:in `loop'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:269:in `each_top_level_statement'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:192:in `eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:173:in `block in run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:172:in `catch'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:172:in `run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/irb_console.rb:112:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:59:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:8:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:87:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor/command.rb:28:in `run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor/invocation.rb:127:in `invoke_command'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command/base.rb:178:in `invoke_command'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor.rb:538:in `dispatch'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command/base.rb:73:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:65:in `block in invoke'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:143:in `with_argv'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:63:in `invoke'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands.rb:18:in `<main>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/3.3.0/bundled_gems.rb:75:in `require'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/3.3.0/bundled_gems.rb:75:in `block (2 levels) in replace_require'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+bin/rails:4:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [e821d0fd-64b3-45c5-a799-e542cfe6385b] ↳ (aula05):2:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [50bcb4fb-0bab-472d-847e-0735d31be081] Performing CancelOverdueTasks (Job ID: 50bcb4fb-0bab-472d-847e-0735d31be081) from Async(default)
+[ActiveJob] [CancelOverdueTasks] [50bcb4fb-0bab-472d-847e-0735d31be081] ↳ (aula05):4:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [50bcb4fb-0bab-472d-847e-0735d31be081] Error performing CancelOverdueTasks (Job ID: 50bcb4fb-0bab-472d-847e-0735d31be081) from Async(default) in 0.47ms: NameError (uninitialized constant Tasks):
+/workspaces/aula_05/app/jobs/cancel_overdue_tasks.rb:3:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:68:in `block in _perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:120:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/i18n-1.14.7/lib/i18n.rb:348:in `with_locale'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `instance_exec'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `instance_exec'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:140:in `run_callbacks'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:67:in `_perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:51:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in `block in instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:39:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in `block in perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in `block in tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:38:in `tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in `tagged'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activesupport-8.0.2/lib/active_support/broadcast_logger.rb:241:in `method_missing'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:39:in `tag_logger'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in `perform_now'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/activejob-8.0.2/lib/active_job/execution.rb:23:in `perform_now'
+(aula05):4:in `<main>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/workspace.rb:101:in `eval'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/workspace.rb:101:in `evaluate'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/context.rb:591:in `evaluate_expression'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb/context.rb:557:in `evaluate'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:201:in `block (2 levels) in eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:512:in `signal_status'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:193:in `block in eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:272:in `block in each_top_level_statement'
+<internal:kernel>:187:in `loop'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:269:in `each_top_level_statement'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:192:in `eval_input'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:173:in `block in run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:172:in `catch'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/irb-1.15.2/lib/irb.rb:172:in `run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/irb_console.rb:112:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:59:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:8:in `start'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands/console/console_command.rb:87:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor/command.rb:28:in `run'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor/invocation.rb:127:in `invoke_command'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command/base.rb:178:in `invoke_command'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/thor-1.3.2/lib/thor.rb:538:in `dispatch'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command/base.rb:73:in `perform'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:65:in `block in invoke'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:143:in `with_argv'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:63:in `invoke'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/commands.rb:18:in `<main>'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/3.3.0/bundled_gems.rb:75:in `require'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/3.3.0/bundled_gems.rb:75:in `block (2 levels) in replace_require'
+/home/vscode/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+bin/rails:4:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [50bcb4fb-0bab-472d-847e-0735d31be081] ↳ (aula05):4:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [62d78346-8e5a-431a-a21f-b3df494b8673] Performing CancelOverdueTasks (Job ID: 62d78346-8e5a-431a-a21f-b3df494b8673) from Async(default)
+[ActiveJob] [CancelOverdueTasks] [62d78346-8e5a-431a-a21f-b3df494b8673] ↳ (aula05):6:in `<main>'
+[ActiveJob] [CancelOverdueTasks] [62d78346-8e5a-431a-a21f-b3df494b8673]   [1m[36mTask Load (5.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT 1000 /*application='Aula05',job='CancelOverdueTasks'*/[0m
+[ActiveJob] [CancelOverdueTasks] [62d78346-8e5a-431a-a21f-b3df494b8673]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05',job='CancelOverdueTasks'*/[0m
+[ActiveJob] [CancelOverdueTasks] [62d78346-8e5a-431a-a21f-b3df494b8673]   [1m[36mTask Update (0.8ms)[0m  [1m[33mUPDATE "tasks" SET "status" = 3, "updated_at" = '2025-07-11 02:13:08.350718' WHERE "tasks"."id" = 2 /*application='Aula05',job='CancelOverdueTasks'*/[0m
+[ActiveJob] [CancelOverdueTasks] [62d78346-8e5a-431a-a21f-b3df494b8673]   [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05',job='CancelOverdueTasks'*/[0m
+[ActiveJob] [CancelOverdueTasks] [62d78346-8e5a-431a-a21f-b3df494b8673] Performed CancelOverdueTasks (Job ID: 62d78346-8e5a-431a-a21f-b3df494b8673) from Async(default) in 29.35ms
+[ActiveJob] [CancelOverdueTasks] [62d78346-8e5a-431a-a21f-b3df494b8673] ↳ (aula05):6:in `<main>'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /* loading for pp */ LIMIT 11 /*application='Aula05',job='CancelOverdueTasks'*/[0m
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 02:16:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2025-07-11 02:16:07 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks?title=Task" for 127.0.0.1 at 2025-07-11 02:16:20 +0000
+Processing by TasksController#index as */*
+  Parameters: {"title"=>"Task"}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (title LIKE %'Task'%) /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "%": syntax error:
+SELECT "tasks".* FROM "tasks" WHERE (title LIKE %'Task'%) /*action='index',application='Aula05',controller='tasks'*/
+                                                ^)
+Caused by: SQLite3::SQLException (near "%": syntax error:
+SELECT "tasks".* FROM "tasks" WHERE (title LIKE %'Task'%) /*action='index',application='Aula05',controller='tasks'*/
+                                                ^)
+
+Information for: ActiveRecord::StatementInvalid (SQLite3::SQLException: near "%": syntax error:
+SELECT "tasks".* FROM "tasks" WHERE (title LIKE %'Task'%) /*action='index',application='Aula05',controller='tasks'*/
+                                                ^):
+  
+
+Information for cause: SQLite3::SQLException (near "%": syntax error:
+SELECT "tasks".* FROM "tasks" WHERE (title LIKE %'Task'%) /*action='index',application='Aula05',controller='tasks'*/
+                                                ^):
+  
+app/controllers/tasks_controller.rb:7:in `index'
+Started GET "/tasks?title=Task" for 127.0.0.1 at 2025-07-11 02:16:59 +0000
+Processing by TasksController#index as */*
+  Parameters: {"title"=>"Task"}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (title LIKE '%'Task'%') /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "Task": syntax error:
+SELECT "tasks".* FROM "tasks" WHERE (title LIKE '%'Task'%') /*action='index',application='Aula05',controller='tasks'*/
+                                                   ^)
+Caused by: SQLite3::SQLException (near "Task": syntax error:
+SELECT "tasks".* FROM "tasks" WHERE (title LIKE '%'Task'%') /*action='index',application='Aula05',controller='tasks'*/
+                                                   ^)
+
+Information for: ActiveRecord::StatementInvalid (SQLite3::SQLException: near "Task": syntax error:
+SELECT "tasks".* FROM "tasks" WHERE (title LIKE '%'Task'%') /*action='index',application='Aula05',controller='tasks'*/
+                                                   ^):
+  
+
+Information for cause: SQLite3::SQLException (near "Task": syntax error:
+SELECT "tasks".* FROM "tasks" WHERE (title LIKE '%'Task'%') /*action='index',application='Aula05',controller='tasks'*/
+                                                   ^):
+  
+app/controllers/tasks_controller.rb:7:in `index'
+Started GET "/tasks?title=Task" for 127.0.0.1 at 2025-07-11 02:18:44 +0000
+Processing by TasksController#index as */*
+  Parameters: {"title"=>"Task"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (title LIKE '%Task%') /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/tasks?title=sk" for 127.0.0.1 at 2025-07-11 02:18:52 +0000
+Processing by TasksController#index as */*
+  Parameters: {"title"=>"sk"}
+  [1m[36mTask Load (1.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (title LIKE '%sk%') /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT 1 /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Aula05'*/[0m
+  [1m[36mTask Update (0.6ms)[0m  [1m[33mUPDATE "tasks" SET "title" = 'Task 2', "updated_at" = '2025-07-11 02:19:06.249292' WHERE "tasks"."id" = 2 /*application='Aula05'*/[0m
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Aula05'*/[0m
+Started GET "/tasks?title=sk" for 127.0.0.1 at 2025-07-11 02:19:07 +0000
+Processing by TasksController#index as */*
+  Parameters: {"title"=>"sk"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (title LIKE '%sk%') /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks?title=1" for 127.0.0.1 at 2025-07-11 02:19:11 +0000
+Processing by TasksController#index as */*
+  Parameters: {"title"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (title LIKE '%1%') /*action='index',application='Aula05',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = 3 /* loading for pp */ LIMIT 11 /*application='Aula05'*/[0m
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = 0 /* loading for pp */ LIMIT 11 /*application='Aula05'*/[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = 3 /* loading for pp */ LIMIT 11 /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Aula05'*/[0m

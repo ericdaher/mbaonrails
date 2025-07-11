@@ -1,0 +1,36 @@
+// .devcontainer/devcontainer.json
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ruby-rails-postgres
+{
+  "name": "DevContainer",
+  "features": {},
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteEnv": {
+    "GIT_EDITOR": "code --wait"
+  },
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "web",
+      "onAutoForward": "notify",
+      "requireLocalPort": true
+    }
+  },
+  "onCreateCommand": "sh /usr/local/scripts/onCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+      },
+      "extensions": [
+        "Shopify.ruby-lsp"
+      ]
+    }
+  }
+}

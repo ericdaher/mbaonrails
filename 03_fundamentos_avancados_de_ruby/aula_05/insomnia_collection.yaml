@@ -1,0 +1,169 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1752198916101
+  modified: 1752198916101
+  description: ""
+collection:
+  - url: http://localhost:3000/tasks?title=1
+    name: /tasks
+    meta:
+      id: req_61340b8b9dc9443d83266c8a4735060d
+      created: 1752198958826
+      modified: 1752200350270
+      isPrivate: false
+      description: ""
+      sortKey: -1752199113894
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/tasks
+    name: /tasks
+    meta:
+      id: req_a9def62285c14127bdc53d4781a53ca9
+      created: 1752198990194
+      modified: 1752199500292
+      isPrivate: false
+      description: ""
+      sortKey: -1752199113844
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        { 
+        	"task": {
+        		"title": "Task 1",
+        		"description": "Descrição da task",
+        		"status": "ongoing"
+        	}
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/tasks/:id
+    name: /tasks/:id
+    meta:
+      id: req_e9357a9a7036415da410d80294a9864f
+      created: 1752199113794
+      modified: 1752199501530
+      isPrivate: false
+      description: ""
+      sortKey: -1752199113869
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+    pathParameters:
+      - name: id
+        value: "1"
+  - url: http://localhost:3000/tasks/:id
+    name: /tasks/:id
+    meta:
+      id: req_f602196dba8f4196bb66e18e1c538de2
+      created: 1752199474125
+      modified: 1752199474125
+      isPrivate: false
+      description: ""
+      sortKey: -1752199051994
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        { 
+        	"task": {
+        		"title": "Task 1",
+        		"description": "Alterando descrição",
+        		"status": "a"
+        	}
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+    pathParameters:
+      - name: id
+        value: "1"
+  - url: http://localhost:3000/tasks/:id
+    name: /tasks/:id
+    meta:
+      id: req_1b80d904696546bea8a9923d2ec620e5
+      created: 1752199552319
+      modified: 1752199579057
+      isPrivate: false
+      description: ""
+      sortKey: -1752199051894
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+    pathParameters:
+      - name: id
+        value: "1"
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1752198946442
+    modified: 1752198946442
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1752198946354
+    modified: 1752198946354
+    isPrivate: false

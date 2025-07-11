@@ -1,0 +1,4 @@
+development:
+  task_cancelation:
+    command: "CancelOverdueTasksJob.perform"
+    schedule: every day at 9am

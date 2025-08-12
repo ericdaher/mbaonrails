@@ -3,6 +3,7 @@ require 'uri'
 require 'json'
 
 class Site
+  REQUEST_TIMEOUT = 3
   attr_reader :url, :alert_if, :options
 
   def initialize(url, alert_if:, **options)
@@ -29,8 +30,11 @@ class Site
 
   def make_request
     uri = URI(@url)
-    response = Net::HTTP.get_response(uri)
-    response
+    
+    Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https', open_timeout: REQUEST_TIMEOUT, read_timeout: REQUEST_TIMEOUT) do |http|
+      request = Net::HTTP::Get.new(uri)
+      http.request(request)
+    end
   rescue
     { error: "Something went wrong when reaching the URI." }
   end

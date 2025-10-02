@@ -1,0 +1,15 @@
+ARG RUBY_VERSION=3.3.5
+FROM ruby:$RUBY_VERSION
+
+RUN bundle config --global frozen 1
+
+WORKDIR /usr/src/app
+
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+COPY . .
+
+ENV BINDING="0.0.0.0"
+CMD ["bin/dev"]
+EXPOSE 3000

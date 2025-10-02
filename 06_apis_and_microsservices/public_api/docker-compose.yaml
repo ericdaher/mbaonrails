@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./public_api/Dockerfile.dev
+    entrypoint: ["/usr/src/app/bin/docker-entrypoint"]
+    command: ["./bin/rails", "server"]
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development

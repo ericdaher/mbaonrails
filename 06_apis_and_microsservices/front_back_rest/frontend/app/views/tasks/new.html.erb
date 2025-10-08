@@ -1,0 +1,14 @@
+<h1>Create task</h1>
+
+<%= form_with url: "/tasks", method: :post do |form| %>
+  <%= form.label :description, "Description:" %>
+  <%= form.text_field :description %>
+
+  <%= form.label :status, "Status" %>
+  <%= form.text_field :status %>
+
+  <%= form.label :due_at, "Due at:" %>
+  <%= form.date_field :due_at %>
+
+  <%= form.submit "Create" %>
+<% end %>

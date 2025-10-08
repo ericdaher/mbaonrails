@@ -1,0 +1,14 @@
+<h1>Tasks</h1>
+
+<%= link_to "Create task", new_task_path %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>ID: <%= task["id"] %></li>
+    <li>Descrição: <%= task["attributes"]["description"] %></li>
+    <li>Status: <%= task["attributes"]["status"] %></li>
+    <li>Prazo: <%= task["attributes"]["due_at"] %></li>
+    <li><%= link_to "Edit", edit_task_path(task["id"]) %></li>
+    <li><%= link_to "Delete", task_path(task["id"]), data: { turbo_method: :delete } %></li>
+  <% end %>
+</ul>

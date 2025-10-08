@@ -1,0 +1,4 @@
+one:
+  description: "Task de exemplo"
+  status: "pending"
+  due_at: <%= 1.day.from_now %>

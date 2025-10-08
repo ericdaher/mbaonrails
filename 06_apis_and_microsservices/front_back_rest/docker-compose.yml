@@ -1,0 +1,36 @@
+services:
+  back:
+    build:
+      context: ./backend/
+    working_dir: /rails
+    volumes:
+      - ./backend:/rails:delegated
+      - tmp_back:/rails/tmp
+      - bundle_back:/usr/local/bundle
+    ports:
+      - 3300:3000
+    env_file: .env
+    environment:
+      - RAILS_ENV=development
+    user: "0:0"
+    command: ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
+  front:
+    build:
+      context: ./frontend/
+    working_dir: /rails
+    volumes:
+      - ./frontend:/rails:delegated
+      - tmp_front:/rails/tmp
+      - bundle_front:/usr/local/bundle
+    ports:
+      - 3301:3001
+    env_file: .env
+    environment:
+      - RAILS_ENV=development
+    user: "0:0"
+    command: ["bundle", "exec", "rails", "s", "-p", "3001", "-b", "0.0.0.0"]
+volumes:
+  tmp_back:
+  tmp_front:
+  bundle_back:
+  bundle_front:

@@ -1,0 +1,14 @@
+<h1>Edit task</h1>
+
+<%= form_with url: "/tasks/#{@task["id"]}", method: :patch do |form| %>
+  <%= form.label :description, "Description:" %>
+  <%= form.text_field :description, value: @task["attributes"]["description"] %>
+
+  <%= form.label :status, "Status" %>
+  <%= form.text_field :status, value: @task["attributes"]["status"] %>
+
+  <%= form.label :due_at, "Due at:" %>
+  <%= form.date_field :due_at, value: DateTime.parse(@task["attributes"]["due_at"]) %>
+
+  <%= form.submit "Edit" %>
+<% end %>
